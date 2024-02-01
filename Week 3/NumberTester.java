@@ -1,10 +1,11 @@
 /**
 Duncan Starkenburg
-CS 1210, HW 3
+CS2100, HW 3
 This program takes a .txt file input, identifies the numbers in 
 the file as prime, has repeating digits, and even and outputs it 
 formated into another .txt file
 */
+
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;

@@ -1,0 +1,2 @@
+Mean: 77.444
+Std Deviation: 10.021
