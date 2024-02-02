@@ -1,6 +1,6 @@
 /**
 Duncan Starkenburg
-CS2100, HW 3
+CS2100, Week 3 HW
 This program takes a .txt file input, identifies the numbers in 
 the file as prime, has repeating digits, and even and outputs it 
 formated into another .txt file
