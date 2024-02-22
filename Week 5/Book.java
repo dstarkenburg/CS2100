@@ -139,6 +139,7 @@ public class Book
    * toString method returns a formatted string that shows the state of the Book object  
    * @return         the title, author, isbn, and page count as a formated string 
    */
+   @Override
    public String toString()
    {
       String str = title + ", " + author + " (ISBN-10 #" + isbn + ", " + numPages + " pages)";
@@ -146,13 +147,14 @@ public class Book
    }
 
    /**
-   * @Override 
    * Method to overide comparison (==) to check for similar fields
    * @param book2    the Book object to check equality to
    * @return         returns true if objects have same title, author, and isbn
    */
-   public boolean equals(Book book2)
+   @Override
+   public boolean equals(Object obj)
    {
+      Book book2 = (Book)obj;
       boolean isEqual;
       
       if (this.getTitle() == book2.getTitle()

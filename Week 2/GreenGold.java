@@ -13,39 +13,40 @@ public class GreenGold
          System.out.println("Welcome to UVM's edition of FizzBuzz, called GreenGold");
          
          // Declare values
-         int StartVal;
-         int EndVal;
+         int startVal;
+         int endVal;
+         final int GREEN = 5;
+         final int GOLD = 2;
          
          // Validate values as user inputs
-         while(true)
-         {
-            Scanner input = new Scanner(System.in);
-            System.out.print("Enter the starting value: ");
-            StartVal = input.nextInt();
-            System.out.print("Enter the ending value: ");
-            EndVal = input.nextInt();
-            if (!((StartVal > 0) && (StartVal < EndVal)))
-            {
-               System.out.println("A low of " + StartVal + " and a high of " + EndVal + " is not a valid choice");
-            }
-            else
-            {
-               break;
-            }
-         }
+         Scanner input = new Scanner(System.in);
+         System.out.print("Enter the starting value: ");
+         startVal = input.nextInt();
+         System.out.print("Enter the ending value: ");
+         endVal = input.nextInt();
          
-         // Execute the GreenGold game itself
-         for (int count = StartVal; count <= EndVal; count++)
+         while(!((startVal > 0) && (startVal < endVal)))
          {
-            if ((count % 5 == 0) && (count % 2 == 0))
+            System.out.println("A low of " + startVal + " and a high of " + endVal + " is not a valid choice");
+            System.out.print("Enter the starting value: ");
+            startVal = input.nextInt();
+            System.out.print("Enter the ending value: ");
+            endVal = input.nextInt();
+            
+         }
+                 
+         // Execute the GreenGold game itself
+         for (int count = startVal; count <= endVal; count++)
+         {
+            if ((count % GREEN == 0) && (count % GOLD == 0))
             {
                System.out.println("CATAMOUNT");
             }
-            else if (count % 5 == 0)
+            else if (count % GREEN == 0)
             {
                System.out.println("GREEN");
             }
-            else if (count % 2 == 0)
+            else if (count % GOLD == 0)
             {
                System.out.println("GOLD");
             }

@@ -4,7 +4,7 @@ CS 2100, Week 5 HW
 THIS FILE IS A DRIVER WRITTEN BY JACKIE HORTON @ UVM
 */
 
-public class Driver
+public class Driver_1
 {
     public static void main(String[] args)
     {

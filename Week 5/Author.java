@@ -95,6 +95,7 @@ public class Author
    * toString method returns a formatted string that shows the state of the Author object  
    * @return         the first name, last name, and email as a formated string 
    */
+   @Override
    public String toString()
    {
       String str = firstName + " " + lastName + " <" + email + ">";
@@ -102,13 +103,14 @@ public class Author
    }
    
    /**
-   * @Override 
    * Method to overide comparison (==) to check for similar fields
    * @param author2  the Author object to check equality to
    * @return         returns true if objects are identical or false otherwise
    */
-   public boolean equals(Author author2)
+   @Override
+   public boolean equals(Object obj)
    {
+      Author author2 = (Author)obj;
       boolean isEqual;
       
       if (this.getFirstName() == author2.getFirstName()
