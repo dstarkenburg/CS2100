@@ -32,4 +32,15 @@ public class Invitation
       this.attending = true;
    }
    
+   public String toString()
+   {
+      return String.format("%s\n%s\n%s\n%s\n%s\n", invitee, event, date, location, attending ? "attending" : "Not attending");
+   }
+   
+   public boolean equals(Object obj)
+   {
+      Invitation inv2 = (Invitation)obj;
+      return (this.date.equals(inv2.date) 
+              && this.location.equals(inv2.location));
+   } 
 }

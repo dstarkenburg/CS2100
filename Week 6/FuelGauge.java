@@ -18,13 +18,13 @@ public class FuelGauge
       }
       else
       {
-         this.gallons = 15;
+         this.gallons = MAX_GALLONS;
       }
    }
    
    public FuelGauge()
    {
-      this(15);
+      this(MAX_GALLONS);
    }
    
    // Accessor function for current fuel
@@ -64,15 +64,13 @@ public class FuelGauge
    // Method to check for empty tank
    public boolean isEmpty()
    {
-      if (gallons == 0) {return true;}
-      return false;
+      return gallons == 0;
    }
    
    // Method to check for full tank
    public boolean isFull()
    {
-      if (gallons == MAX_GALLONS) {return true;}
-      return false;
+      return gallons == MAX_GALLONS;
    }
    
    // Override the toString function
