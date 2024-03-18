@@ -122,7 +122,7 @@ public class Holding
    @Override
    public String toString()
    {
-      return String.format("%\n% shares\nPurchase price: $%.2f\nCurrent price: $%.2f",
+      return String.format("%s%n%d shares%nPurchase price: $%.2f%nCurrent price: $%.2f%n",
                            stock, numShares, purchasePrice, currentPrice);
    }
    

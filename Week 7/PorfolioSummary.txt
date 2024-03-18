@@ -1,0 +1,37 @@
+Maxine Evergreen's Portfolio as of 2024-03-17
+
+Highest value holding is AVGO with a value of $121,812.00
+Total value of portfolio is $196,392.35
+
+Current holdings:
+Maxine Evergreen's Portfolio
+AAPL:Apple Inc.
+100 shares
+Purchase price: $165.27
+Current price: $188.35
+
+TSLA:Tesla, Inc.
+250 shares
+Purchase price: $190.93
+Current price: $182.75
+
+MRVL:Marvell Technology, Inc,
+55 shares
+Purchase price: $52.90
+Current price: $66.09
+
+AVGO:Broadcom Inc.
+100 shares
+Purchase price: $1263.67
+Current price: $1218.12
+
+NFLX:Netflix, Inc.
+10 shares
+Purchase price: $468.87
+Current price: $557.21
+
+INTC:Intel Corporation
+20 shares
+Purchase price: $31.52
+Current price: $42.54
+

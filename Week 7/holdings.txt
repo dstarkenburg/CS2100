@@ -1,0 +1,36 @@
+Maxine Evergreen
+Apple Inc.
+AAPL
+100
+165.27
+188.35
+Tesla, Inc.
+TSLA
+250
+190.93
+182.75
+Marvell Technology, Inc,
+MRVL
+55
+52.90
+66.09
+Intuit Inc.
+INTU
+120
+643.80
+632.73
+Broadcom Inc.
+AVGO
+100
+1263.67
+1218.12
+Netflix, Inc.
+NFLX
+10
+468.87
+557.21
+Intel Corporation
+INTC
+20
+31.52
+42.54

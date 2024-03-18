@@ -68,7 +68,8 @@ public class Portfolio
    
    /**
    * Mutator function that takes the amount of shares
-   * you wish to sell and 'sells' them of a certain stock
+   * you wish to sell and 'sells' them of a certain stock.
+   * If holding has 0 shares, remove it.
    * @param num the number of shares to sell
    * @param symbol the symbol of the share to sell
    * @return returns the price of sold shares
@@ -81,9 +82,47 @@ public class Portfolio
          if (current.getStock().getSymbol().equals(symbol))
          {
             hol2 = current;
-            return hol2.sellShares(num);
-         }   
+            double profit = hol2.sellShares(num);
+            if (hol2.getNumShares() == 0)
+            {
+               holdings.remove(hol2);
+            }
+            return profit;
+         }
+         
       }
       return 0.0;
+   }
+   
+   /**
+   * Accessor function that returns a deep copy of the holdings
+   * array
+   * @return returns a deep copy of the holding array
+   */
+   public ArrayList<Holding> getHoldings()
+   {
+      ArrayList<Holding> outputList = new ArrayList<>();
+      for (Holding curr : this.holdings)
+      {
+         outputList.add(new Holding(curr));
+      }
+      return outputList;
+   }
+   
+   /**
+   * Function to override the toString method so that
+   * it returns a formated string of the Portfolio object
+   * @return the members of the object in a string
+   */
+   @Override
+   public String toString()
+   {
+      String output = "";
+      output = output + owner + "'s Portfolio\n";
+      for (Holding curr : this.holdings)
+      {
+         output = output + curr + "\n";
+      }
+      return output;
    }
 }
