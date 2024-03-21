@@ -15,15 +15,7 @@ public class CheckingAccount extends BankAccount
    
    public boolean withdraw(double amount)
    {
-      boolean completed = true;
-      if (amount + FEE <= this.getBalance())
-      {
-         this.setBalance(this.getBalance() - amount - FEE);
-      }
-      else
-      {
-         completed = false;
-      }
-      return completed;
+      amount = amount + FEE;
+      return super.withdraw(amount);
    }
 }
