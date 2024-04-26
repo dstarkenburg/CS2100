@@ -7,11 +7,22 @@ import java.util.ArrayList;
 
 public class ComputerBoard extends Board
 {
+   /**
+   * ComputerBoard constructor that passes filename
+   * to the Board constructor.
+   * @param s filename to pass on
+   */
    public ComputerBoard(String s)
    {
       super(s);
    }
    
+   /**
+   * Takes a move and makes it AGAINST this board. Takes in move to be applied.
+   * Returns either null, or, if the move sank a ship, a String.
+   * @param m move to make against this board
+   * @return  returns null unless a ship is sunk, then returns sunk string
+   */
    public String makePlayerMove(Move m)
    {
       String output;
@@ -31,12 +42,17 @@ public class ComputerBoard extends Board
       
       if (shipString != null)
       {
-         sunk = "You sunk my " + shipString;
+         sunk = "You sunk computer's " + shipString;
       }
       
       return sunk;
    }
    
+   /**
+   * Returns a String representation of the ComputerBoard, displaying the first character
+   * of the String returned by the toString method overridden in CellStatus
+   * @return returns this object in string form
+   */
    @Override
    public String toString()
    {

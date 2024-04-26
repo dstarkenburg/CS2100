@@ -8,15 +8,27 @@ import java.io.*;
 
 public abstract class Board
 {
+   // Declare private member layout
    private ArrayList<ArrayList<CellStatus>> layout;
+   
+   // Declare private members ship locations
    private ArrayList<Move> aircraftLoc;
    private ArrayList<Move> subLoc;
    private ArrayList<Move> cruiserLoc;
    private ArrayList<Move> destroyerLoc;
    private ArrayList<Move> battleshipLoc;
+   
+   // Declare fleet and how many possible moves
    private Fleet fleet;
    public static final int SIZE = 100;
 
+   /**
+   * A method that takes in an array of moves and
+   * a status and sets every location on the layout
+   * to that CellStatus
+   * @param movesAr   an array of Move objects to set
+   * @param newStatus the CellStatus to set on the layout
+   */
    private void setTiles(ArrayList<Move> movesAr, CellStatus newStatus)
    {
       for (int i = 0; i < movesAr.size(); i++){
@@ -24,6 +36,16 @@ public abstract class Board
       }
    }
   
+   /**
+   * A method that takes two moves as strings
+   * and the type of ship that should be between
+   * the moves and returns an array of Move objects
+   * that represent that entire ship
+   * @param start string i.e "E1" as start of the ship
+   * @param end   string i.e "E5" as end of the ship
+   * @param type  String i.e "B" as type of ship
+   * @return      returns an arraylist of Move objects
+   */
    private ArrayList<Move> getTiles(String start, String end, String type)
    {
       Move startMove = new Move(start);
@@ -37,8 +59,10 @@ public abstract class Board
          default -> 3;
       };
       
+      // Initialize output ArrayList
       ArrayList<Move> output = new ArrayList<Move>(shipSize);
       
+      // If else logic used to verify direction of ship placed and length
       if (startMove.row() < endMove.row())
       {
          if (startMove.col() == endMove.col())
@@ -92,10 +116,19 @@ public abstract class Board
          }
       
       }
+      
+      // Return the array of Move objects
       return output;
       
    }
    
+   /**
+   * Takes filename as a parameter. Initializes layout, initially setting all cells to
+   * CellStatus.NOTHING. Gets information from file and add ships to the layout.
+   * Initializes Fleet.
+   * @param filename name of txt file with ship
+   *        locations
+   */
    public Board(String filename)
    {
       this.fleet = new Fleet();
@@ -149,6 +182,13 @@ public abstract class Board
       }
    }
    
+   /**
+   * Applies a move to layout. If the targeted cell does not contain a ship, it is set to
+   * CellStatus.NOTHING_HIT. If it contains a ship, the cell is changed from, for instance,
+   * CellStatus.SUB to CellStatus.SUB_HIT.
+   * @param m  move to apply to the layout
+   * @return   returns the CellStatus of the targeted cell, or _SUNK if the ship is now sunk
+   */
    public CellStatus applyMoveToLayout(Move m)
    {
       CellStatus curr = layout.get(m.row()).get(m.col());
@@ -215,6 +255,11 @@ public abstract class Board
       }
    }
    
+   /**
+   * Takes a move as a parameter and determines if the spot is available.
+   * @param m the move that will be checked for availability
+   * @return  returns true if this move is possible, otherwise false.
+   */
    public boolean moveAvailable(Move m)
    {
       switch(layout.get(m.row()).get(m.col()))
@@ -236,16 +281,28 @@ public abstract class Board
       }
    }
    
+   /**
+   * Returns a reference to the layout.
+   * @return returns a reference to layout
+   */
    public ArrayList<ArrayList<CellStatus>> getLayout()
    {
       return layout;
    }
    
+   /**
+   * Returns a reference to the fleet.
+   * @return returns a reference to fleet
+   */
    public Fleet getFleet()
    {
       return fleet;
    }
    
+   /**
+   * Returns true if all ships have been sunk, false otherwise
+   * @return returns true if all ships have been sunk, false otherwise.
+   */
    public boolean gameOver()
    {
       return fleet.gameOver();

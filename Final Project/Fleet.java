@@ -5,12 +5,16 @@ CS 2100, Final Project
 
 public class Fleet
 {
+   // Declare private ship memebers
    private Ship battleShip;
    private Ship aircraftCarrier;
    private Ship cruiser;
    private Ship sub;
    private Ship destroyer;
    
+   /**
+   * Constructor that initializes ship fields
+   */
    public Fleet()
    {
       this.battleShip = new Battleship();
@@ -20,6 +24,13 @@ public class Fleet
       this.destroyer = new Destroyer();
    }
    
+   /**
+   * Method that takes in a ship type and 
+   * informs the respective ship that it is hit.
+   * If sunk, return true, otherwise false.
+   * @param s ship to inform of hit
+   * @return  true if ship sunk, false otherwise.
+   */
    public boolean updateFleet(ShipType s)
    {
       Ship ship = switch(s)
@@ -34,6 +45,11 @@ public class Fleet
       return ship.hit();
    }
    
+   /**
+   * gameOver method returns gameOver boolean
+   * @return Returns true if all ships have been
+   *         sunk, returns false if not.
+   */
    public boolean gameOver()
    {
       return battleShip.getSunk() &&
