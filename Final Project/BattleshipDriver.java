@@ -16,7 +16,7 @@ public class BattleshipDriver
    public static void main(String[] args)
    {
       ///*****************///
-      int DIFFICULTY = 5; /// 0: No AI, 1: Easy AI, 2: Normal AI, 3: Medium AI, 4: Hard AI, 5: Expert AI
+      int DIFFICULTY = 0; /// 0: No AI, 1: Easy AI, 2: Normal AI, 3: Medium AI, 4: Hard AI, 5: Expert AI
       ///*****************///
       
       // Initiate the game, keyboard input, and valid moves

@@ -12,7 +12,7 @@ public class Game
    /**
    * Constructor of Game that takes in difficulty setting
    * and runs the game.
-   * @param difficulty integer value 0-3 to represent
+   * @param difficulty integer value 0-5 to represent
    *                   difficulty of AI. 0 is off.
    */
    public Game(int difficulty)

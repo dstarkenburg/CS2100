@@ -53,8 +53,8 @@ public class AIUserBoard extends UserBoard
    /**
    * Constructor for the AIUserBoard object. Passes
    * filename to UserBoard class. Initializes members
-   * @param s          filename to pass to UserBoard class
-   * @param difficulty integer 1-3 giving AI better odds
+   * @param s           filename to pass to UserBoard class
+   * @param difficulty  integer 1-5 giving AI better odds
    */
    public AIUserBoard(String s, int difficulty)
    {
@@ -93,7 +93,7 @@ public class AIUserBoard extends UserBoard
    /**
    * Method that selects and makes a move AGAINST 
    * this board with AI. Returns an array of two Strings.
-   * @return returns an array of strings: the move
+   * @return returns an array of two strings: the move
    *         made against this board and the sunk
    *         string or null of the location hit.
    */
@@ -103,7 +103,7 @@ public class AIUserBoard extends UserBoard
       Move moveMade;
       String[] output = new String[2];
       
-      // Difficulty logic, if we educated moves to play, and the 
+      // Difficulty logic, if we have educated moves to play, and the 
       // difficulty randomizer says to play it, play it.
       // Otherwise, pick a random move.
       if (educatedMoves.size() != 0 && chance(difficulty))
